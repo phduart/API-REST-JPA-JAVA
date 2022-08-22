@@ -80,7 +80,8 @@ public class ClienteService implements ClientesServiceInterface {
         try {
             clientRepository.saveAndFlush(entity);
             logger.info("Cliente inserido!");
-            return Response.builder().status("Success").message("Cliente inserido").body(ClienteAddDTO.builder().id_client(entity.getId_client())).build();
+            ClienteAddDTO clienteInserido = ClienteAddDTO.builder().id_client(entity.getId_client()).build();
+            return Response.builder().status("Success").message("Cliente inserido").body(clienteInserido).build();
         } catch (Exception e) {
             logger.info("Erro ao inserir - Erro : " + e.getLocalizedMessage());
         }

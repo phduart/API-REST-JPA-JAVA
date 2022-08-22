@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "a4bb7031-72e9-42c0-90df-573c497263eb",
+		"name": "JAVA-REST-CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12086119"
+	},
+	"item": [
+		{
+			"name": "GET - Listar todos clientes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_contact\": 1,\r\n    \"id_client\": 1,\r\n    \"contact_number\": 333333333\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clientes/getClientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clientes",
+						"getClientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Buscar cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/clientes/getCliente?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clientes",
+						"getCliente"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Add Cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \r\n    \"name_client\": \"Paulo Duarte\",\r\n    \"cpf_cnpj\": \"4633732480820\",\r\n    \"rg_ie\": \"54102365\",\r\n    \"dt_create\": \"2022-08-19\",\r\n    \"active\": \"S\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clientes/addCliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clientes",
+						"addCliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - Editar Cliente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \r\n    \"id_client\": 1,\r\n    \"name_client\": \"Paulo Duarte Tres\",\r\n    \"cpf_cnpj\": \"3\",\r\n    \"rg_ie\": \"54102365\",\r\n    \"dt_create\": \"2022-08-19\",\r\n    \"active\": \"S\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clientes/editCliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clientes",
+						"editCliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - Deletar Cliente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/clientes/deleteCliente?id=13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clientes",
+						"deleteCliente"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "13"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Listar contatos por Cliente",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/contatos/getContatos?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"contatos",
+						"getContatos"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Add Contato para Cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_client\": 1,\r\n    \"contact_number\": 5555\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/contatos/addContato",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"contatos",
+						"addContato"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - Editar contato por Cliente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id_contact\": 4,\r\n    \"id_client\": 1,\r\n    \"contact_number\": 444\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/contatos/editContato",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"contatos",
+						"editContato"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - Deletar contato por ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/contatos/deleteContato?id=8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"contatos",
+						"deleteContato"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
